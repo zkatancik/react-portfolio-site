@@ -7,11 +7,6 @@
     <a href="https://katancik.com">www.katancik.com</a>
     <br />
   </p>
-  <p align="center">
-    Adopted From: 
-    <a href="https://hashirshoaeb.github.io/home">hashirshoaeb.github.io/home</a>
-    <br />
-  </p>
 </p>
 
 ## Technology Stack 🛠️
@@ -23,3 +18,9 @@ Dependencies defined in package.json:
 | [Typist](https://github.com/jstejada/react-typist)
 | [GitHub API](https://developer.github.com/v3/repos/)
 | [Instagram API](https://www.instagram.com/developer/embedding/)
+
+  <p align="center">
+    Adopted From: 
+    <a href="https://hashirshoaeb.github.io/home">hashirshoaeb.github.io/home</a>
+    <br />
+  </p>
