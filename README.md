@@ -2,9 +2,10 @@
 <br />
 <p align="center">
   <h1 align="center">React Portfolio Website</h1>
-
-<a href="https://katancik.com">Deployed to www.katancik.com here!</a>
-
+  <p align="center">
+    <a href="https://katancik.com">Deployed to www.katancik.com here!</a>
+    <br />
+  </p>
   <p align="center">
     Adopted From: 
     <a href="https://hashirshoaeb.github.io/home">hashirshoaeb.github.io/home</a>
