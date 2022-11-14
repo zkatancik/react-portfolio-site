@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h1 align="center">React Portfolio Website</h1>
+  <h1>React Portfolio Website</h1>
   <p align="center">
     Deployed to 
     <a href="https://katancik.com">www.katancik.com</a>
