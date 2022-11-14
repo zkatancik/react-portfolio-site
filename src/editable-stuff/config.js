@@ -143,16 +143,16 @@ const education = {
   heading: "Education",
   data: [
     {
-      role: 'The University of Texas At Austin, Bachelor of Arts in Economics, Minor in Mathematics, w/ Honors',// Here Add Company Name
-      companylogo: require('../assets/img/utaustinlogoofficial.png'),
-      imageSize: 300,
-      date: '2012 – 2016',
-    },
-    {
       role: 'Northeastern University, Master of Science in Computer Science',
       companylogo: require('../assets/img/neulogoofficial.png'),
       imageSize: 300,
       date: '2019 – 2022',
+    },
+    {
+      role: 'The University of Texas At Austin, Bachelor of Arts in Economics, Minor in Mathematics, w/ Honors',// Here Add Company Name
+      companylogo: require('../assets/img/utaustinlogoofficial.png'),
+      imageSize: 300,
+      date: '2012 – 2016',
     },
   ]
 }
