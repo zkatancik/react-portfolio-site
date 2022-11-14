@@ -4,7 +4,8 @@
   <h1 align="center">React Portfolio Website</h1>
   <p align="center">
     Deployed to 
-    <a href="https://katancik.com">www.katancik.com here!</a>
+    <a href="https://katancik.com">www.katancik.com</a>
+     here!
     <br />
   </p>
   <p align="center">
