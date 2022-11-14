@@ -3,7 +3,7 @@
 <p align="center">
   <h1 align="center">React Portfolio Website</h1>
 
-<a href="https://katancik.com>Deployed to www.katancik.com here!</a>
+<a href="https://katancik.com">Deployed to www.katancik.com here!</a>
 
   <p align="center">
     Adopted From: 
