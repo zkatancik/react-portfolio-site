@@ -5,57 +5,34 @@ const navBar = {
 
 // Main Body SECTION
 const mainBody = {
-  gradientColors: "#4484ce, #1ad7c0, #ff9b11, #9b59b6, #ff7f7f, #ecf0f1",
-  firstName: "Hashir",
+  gradientColors: "#003087, #FFB81C, #00338D, #000000, #C8102E, #BF5700",
+  firstName: "Zack",
   middleName: "",
-  lastName: "Shoaib",
-  message: " Passionate about changing the world with technology. ",
+  lastName: "Katancik",
+  message: " Game Development, Distributed Systems, Cloud - Seattle, WA ",
   icons: [
     {
       image: "fa-github",
-      url: "https://github.com/hashirshoaeb",
-    },
-    {
-      image: "fa-facebook",
-      url: "https://www.facebook.com/hashirshoaeb",
-    },
-    {
-      image: "fa-instagram",
-      url: "https://www.instagram.com/hashirshoaeb/",
+      url: "https://github.com/zkatancik",
     },
     {
       image: "fa-linkedin",
-      url: "https://www.linkedin.com/in/hashirshoaeb/",
+      url: "https://www.linkedin.com/in/zachary-katancik/",
     },
     {
       image: "fa-twitter",
-      url: "https://www.twitter.com/hashirshoaeb/",
+      url: "https://twitter.com/katanciktech",
     },
   ],
 };
 
-// ABOUT SECTION
-// If you want the About Section to show a profile picture you can fill the profilePictureLink either with:
-//a) your Instagram username
-//      i.e:profilePictureLink:"johnDoe123",
-//b) a link to an hosted image
-//      i.e:profilePictureLink:"www.picturesonline.com/johnDoeFancyAvatar.jpg",
-//c) image in "editable-stuff" directory and use require("") to import here,
-//      i.e: profilePictureLink: require("../editable-stuff/hashirshoaeb.png"),
-//d) If you do not want any picture to be displayed, just leave it empty :)
-//      i.e: profilePictureLink: "",
-// For Resume either provide link to your resume or import from "editable-stuff" directory
-//     i.e resume: require("../editable-stuff/resume.pdf"),
-//         resume: "https://docs.google.com/document/d/13_PWdhThMr6roxb-UFiJj4YAFOj8e_bv3Vx9UHQdyBQ/edit?usp=sharing",
-
 const about = {
   show: true,
   heading: "About Me",
-  imageLink: require("../editable-stuff/hashirshoaeb.png"),
+  imageLink: require("../editable-stuff/webportrait.png"),
   imageSize: 375,
   message:
-    "My name is Hashir Shoaib. I’m a graduate of 2020 from National University of Sciences and Technology at Islamabad with a degree in Computer Engineering. I'm most passionate about giving back to the community, and my goal is to pursue this passion within the field of software engineering. In my free time I like working on open source projects.",
-  resume: "https://docs.google.com/document/d/13_PWdhThMr6roxb-UFiJj4YAFOj8e_bv3Vx9UHQdyBQ/edit?usp=sharing",
+    "I'm Zack Katancik, an engineer originally from Buffalo, NY. I studied Economics at the University of Texas at Austin before taking up a career in finance and trading. After deciding to make a change, I completed my Master's in Computer Science at Northeastern University in Boston. Currently, I'm a Distributed Systems Engineer at Bungie in Seattle. I like building new technologies and using my prior experience in business to think about problems in a unique way.",
 };
 
 // PROJECTS SECTION
@@ -66,8 +43,8 @@ const about = {
 const repos = {
   show: true,
   heading: "Recent Projects",
-  gitHubUsername: "hashirshoaeb", //i.e."johnDoe12Gh"
-  reposLength: 4,
+  gitHubUsername: "zkatancik", //i.e."johnDoe12Gh"
+  reposLength: 8,
   specificRepos: [],
 };
 
@@ -79,12 +56,12 @@ const leadership = {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae auctor eu augue ut lectus arcu bibendum at varius. Libero justo laoreet sit amet cursus sit amet. Imperdiet dui accumsan sit amet nulla facilisi morbi. At auctor urna nunc id. Iaculis urna id volutpat lacus laoreet non curabitur gravida. Et magnis dis parturient montes nascetur ridiculus mus mauris. In nisl nisi scelerisque eu ultrices vitae auctor. Mattis nunc sed blandit libero volutpat sed cras ornare. Pulvinar neque laoreet suspendisse interdum consectetur libero.",
   images: [
     { 
-      img: require("../editable-stuff/hashirshoaeb.png"), 
+      img: require("../editable-stuff/webportrait.png"), 
       label: "First slide label", 
       paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum." 
     },
     { 
-      img: require("../editable-stuff/hashirshoaeb.png"), 
+      img: require("../editable-stuff/webportrait.png"), 
       label: "Second slide label", 
       paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum." 
     },
@@ -124,25 +101,58 @@ const skills = {
 // GET IN TOUCH SECTION
 const getInTouch = {
   show: true,
-  heading: "Get In Touch",
+  heading: "Say Hello!",
   message:
-    "I'm currently looking for full-time Software Engineering or Machine Learning opportunities! If you know of any positions available, if you have any questions, or if you just want to say hi, please feel free to email me at",
-  email: "hashirshoaeb@gmail.com",
+    "Career-changer from financial research to software engineering, but still a hobbyist in trading and finance. Feel free to reach out with fun projects to",
+  email: "zkatancik@gmail.com",
 };
 
-const experiences = {
-  show: false,
-  heading: "Experiences",
+const experience = {
+  show: true,
+  heading: "Experience",
   data: [
     {
-      role: 'Software Engineer',// Here Add Company Name
-      companylogo: require('../assets/img/dell.png'),
-      date: 'June 2018 – Present',
+      role: 'Distributed Systems Engineer',// Here Add Company Name
+      companylogo: require('../assets/img/bungielogoofficial.png'),
+      imageSize: 300,
+      date: 'June 2022 – Present',
     },
     {
-      role: 'Front-End Developer',
-      companylogo: require('../assets/img/boeing.png'),
-      date: 'May 2017 – May 2018',
+      role: 'Software Development Engineering Intern',
+      companylogo: require('../assets/img/awslogoofficial.png'),
+      imageSize: 200,
+      date: 'Fall 2021',
+    },
+    {
+      role: 'Wealth Management Analyst',// Here Add Company Name
+      companylogo: require('../assets/img/morganstanleylogoofficial.png'),
+      imageSize: 300,
+      date: 'December 2017 - December 2018',
+    },
+    {
+      role: 'Senior Research Associate',
+      companylogo: require('../assets/img/glglogo.png'),
+      imageSize: 200,
+      date: 'July 2016 - November 2017',
+    },
+  ]
+}
+
+const education = {
+  show: true,
+  heading: "Education",
+  data: [
+    {
+      role: 'The University of Texas At Austin, Bachelor of Arts in Economics, Minor in Mathematics, w/ Honors',// Here Add Company Name
+      companylogo: require('../assets/img/utaustinlogoofficial.png'),
+      imageSize: 300,
+      date: '2012 – 2016',
+    },
+    {
+      role: 'Northeastern University, Master of Science in Computer Science',
+      companylogo: require('../assets/img/neulogoofficial.png'),
+      imageSize: 300,
+      date: '2019 – 2022',
     },
   ]
 }
@@ -152,4 +162,4 @@ const experiences = {
 //   show: false,
 // };
 
-export { navBar, mainBody, about, repos, skills, leadership, getInTouch, experiences };
+export { navBar, mainBody, about, repos, skills, leadership, getInTouch, experience, education };
