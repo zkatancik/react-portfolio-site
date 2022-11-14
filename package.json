@@ -24,6 +24,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "heroku-prebuild": "npm install -g serve",
     "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
