@@ -36,6 +36,7 @@ const Navigation = React.forwardRef((props, ref) => {
       ref={navbarMenuRef}
       className={`px-3 fixed-top  ${!isTop ? "navbar-white" : "navbar-transparent"
         }`}
+      collapseOnSelect
       expand="lg"
     >
       <Navbar.Brand className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
@@ -53,6 +54,7 @@ const Navigation = React.forwardRef((props, ref) => {
             <NavLink
               className="nav-item lead"
               href={process.env.PUBLIC_URL + "/#aboutme"}
+              eventKey="1"
             >
               About
             </NavLink>
@@ -61,6 +63,7 @@ const Navigation = React.forwardRef((props, ref) => {
             <NavLink
               className="nav-item lead"
               href={process.env.PUBLIC_URL + "/#education"}
+              eventKey="2"
             >
               Education
             </NavLink>
@@ -69,12 +72,14 @@ const Navigation = React.forwardRef((props, ref) => {
             <NavLink
               className="nav-item lead"
               href={process.env.PUBLIC_URL + "/#experience"}
+              eventKey="3"
             >
               Experience
             </NavLink>
           )}
           {repos.show && (
           <NavLink href={process.env.PUBLIC_URL + "/#projects"}
+            eventKey="4"
           >
             Projects
           </NavLink>
