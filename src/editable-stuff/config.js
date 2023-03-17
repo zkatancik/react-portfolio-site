@@ -31,8 +31,19 @@ const about = {
   heading: "About Me",
   imageLink: require("../editable-stuff/webportrait.png"),
   imageSize: 375,
-  message:
-    "I'm Zack Katancik, an engineer originally from Buffalo, NY. I studied Economics at the University of Texas at Austin before taking up a career in finance and trading. After deciding to make a change, I completed my Master's in Computer Science at Northeastern University in Boston. Currently, I'm a Distributed Systems Engineer at Bungie in Seattle. I like building new technologies and using my prior experience in business to think about problems in a unique way.",
+  message1:
+    "I'm Zack Katancik, an engineer originally from Buffalo, NY. I studied Economics at the University of Texas at Austin and at graduation began a career in equity research and wealth management. "
+    + "After a few years, I realized a career in finance wasn't for me and began taking online courses in my free time in Computer Science (CS). This was my first experience programming since high school, "
+    + "where I worked on a Halo fan site called Halotracks.org.",
+    message2:
+    "I thoroughly enjoyed these classes, and decided to take the next step by applying to Master's programs in CS. I landed at Northeastern University in Boston, where I spent a year catching up on the fundamentals "
+    + "before transferring into their CS Master's program. During this time, I established a niche in Distributed Systems and completed two internships, one at Bungie, and another at Amazon Web Services. "
+    + "Though I never intended to pursue a career in the gaming industry, my start in programming in high school working on a Bungie fan site led to my interest in the company and later, "
+    + "I found that my passion for Distributed Systems fit in well with the other passionate engineers at the company.",
+    message3:
+    "I returned to Bungie following my internship and graduation from Northeastern in 2022 and am currently a Distributed Systems Engineer working on our Infrastructure team. Together, we are responsible for "
+    + "compiling both development and production builds of Bungie games through our distributed build farm. As well, we develop automated crash handling pipelines for studio tools and the game engine itself. I look forward "
+    + "to continuing my career in games and am excited about the future of distributed computing.",
 };
 
 // PROJECTS SECTION
