@@ -29,7 +29,7 @@ const mainBody = {
 const about = {
   show: true,
   heading: "About Me",
-  imageLink: require("../editable-stuff/webportrait.png"),
+  imageLink: require("../editable-stuff/fullSizePortraitNewSquareWeb.png"),
   imageSize: 375,
   message1:
     "I'm Zack Katancik, an engineer originally from Buffalo, NY. I studied Economics at the University of Texas at Austin and at graduation began a career in equity research and wealth management. "
