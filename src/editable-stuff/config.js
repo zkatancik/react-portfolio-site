@@ -9,7 +9,7 @@ const mainBody = {
   firstName: "Zack",
   middleName: "",
   lastName: "Katancik",
-  message: " Game Development, Distributed Systems, Cloud - Seattle, WA ",
+  message: " Game Development, Distributed Systems, Cloud - Austin, TX ",
   icons: [
     {
       image: "fa-github",
