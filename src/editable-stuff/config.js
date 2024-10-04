@@ -12,16 +12,16 @@ const mainBody = {
   message: " Game Development, Distributed Systems, Cloud - Austin, TX ",
   icons: [
     {
-      image: "fa-github",
+      name: "github",
       url: "https://github.com/zkatancik",
     },
     {
-      image: "fa-linkedin",
+      name: "linkedin",
       url: "https://www.linkedin.com/in/zachary-katancik/",
     },
     {
-      image: "fa-twitter",
-      url: "https://twitter.com/katanciktech",
+      name: "x-twitter",
+      url: "https://x.com/katanciktech",
     },
   ],
 };
@@ -32,18 +32,18 @@ const about = {
   imageLink: require("../editable-stuff/fullSizePortraitNewSquareWeb.png"),
   imageSize: 375,
   message1:
-    "I'm Zack Katancik, an engineer originally from Buffalo, NY. I studied Economics at the University of Texas at Austin and at graduation began a career in equity research and wealth management. "
-    + "After a few years, I realized a career in finance wasn't for me and began taking online courses in my free time in Computer Science (CS). This was my first experience programming since high school, "
-    + "where I worked on a Halo fan site called Halotracks.org.",
-    message2:
-    "I thoroughly enjoyed these classes, and decided to take the next step by applying to Master's programs in CS. I landed at Northeastern University in Boston, where I spent a year catching up on the fundamentals "
-    + "before transferring into their CS Master's program. During this time, I established a niche in Distributed Systems and completed two internships, one at Bungie, and another at Amazon Web Services. "
-    + "Though I never intended to pursue a career in the gaming industry, my start in programming in high school working on a Bungie fan site led to my interest in the company and later, "
-    + "I found that my passion for Distributed Systems fit in well with the other passionate engineers at the company.",
-    message3:
-    "I returned to Bungie following my internship and graduation from Northeastern in 2022 and am currently a Distributed Systems Engineer working on our Infrastructure team. Together, we are responsible for "
-    + "compiling both development and production builds of Bungie games through our distributed build farm. As well, we develop automated crash handling pipelines for studio tools and the game engine itself. I look forward "
-    + "to continuing my career in games and am excited about the future of distributed computing.",
+    "I'm Zack Katancik, an engineer originally from Buffalo, NY. I studied Economics at the University of Texas at Austin and at graduation began a career in equity research and wealth management. " +
+    "After a few years, I realized a career in finance wasn't for me and began taking online courses in my free time in Computer Science (CS). This was my first experience programming since high school, " +
+    "where I worked on a Halo fan site called Halotracks.org.",
+  message2:
+    "I thoroughly enjoyed these classes, and decided to take the next step by applying to Master's programs in CS. I landed at Northeastern University in Boston, where I spent a year catching up on the fundamentals " +
+    "before transferring into their CS Master's program. During this time, I established a niche in Distributed Systems and completed two internships, one at Bungie, and another at Amazon Web Services. " +
+    "Though I never intended to pursue a career in the gaming industry, my start in programming in high school working on a Bungie fan site led to my interest in the company and later, " +
+    "I found that my passion for Distributed Systems fit in well with the other passionate engineers at the company.",
+  message3:
+    "I returned to Bungie following my internship and graduation from Northeastern in 2022 and am currently a Distributed Systems Engineer working on our Infrastructure team. Together, we are responsible for " +
+    "compiling both development and production builds of Bungie games through our distributed build farm. As well, we develop automated crash handling pipelines for studio tools and the game engine itself. I look forward " +
+    "to continuing my career in games and am excited about the future of distributed computing.",
 };
 
 // PROJECTS SECTION
@@ -66,21 +66,21 @@ const leadership = {
   message:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae auctor eu augue ut lectus arcu bibendum at varius. Libero justo laoreet sit amet cursus sit amet. Imperdiet dui accumsan sit amet nulla facilisi morbi. At auctor urna nunc id. Iaculis urna id volutpat lacus laoreet non curabitur gravida. Et magnis dis parturient montes nascetur ridiculus mus mauris. In nisl nisi scelerisque eu ultrices vitae auctor. Mattis nunc sed blandit libero volutpat sed cras ornare. Pulvinar neque laoreet suspendisse interdum consectetur libero.",
   images: [
-    { 
-      img: require("../editable-stuff/webportrait.png"), 
-      label: "First slide label", 
-      paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum." 
+    {
+      img: require("../editable-stuff/webportrait.png"),
+      label: "First slide label",
+      paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
     },
-    { 
-      img: require("../editable-stuff/webportrait.png"), 
-      label: "Second slide label", 
-      paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum." 
+    {
+      img: require("../editable-stuff/webportrait.png"),
+      label: "Second slide label",
+      paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
     },
   ],
   imageSize: {
-    width:"615",
-    height:"450"
-  }
+    width: "615",
+    height: "450",
+  },
 };
 
 // SKILLS SECTION
@@ -123,54 +123,64 @@ const experience = {
   heading: "Experience",
   data: [
     {
-      role: 'Distributed Systems Engineer',// Here Add Company Name
-      companylogo: require('../assets/img/bungielogoofficial.png'),
+      role: "Distributed Systems Engineer", // Here Add Company Name
+      companylogo: require("../assets/img/bungielogoofficial.png"),
       imageSize: 300,
-      date: 'June 2022 – Present',
+      date: "June 2022 – Present",
     },
     {
-      role: 'Software Development Engineering Intern',
-      companylogo: require('../assets/img/awslogoofficial.png'),
+      role: "Software Development Engineering Intern",
+      companylogo: require("../assets/img/awslogoofficial.png"),
       imageSize: 200,
-      date: 'Fall 2021',
+      date: "Fall 2021",
     },
     {
-      role: 'Wealth Management Analyst',// Here Add Company Name
-      companylogo: require('../assets/img/morganstanleylogoofficial.png'),
+      role: "Wealth Management Analyst", // Here Add Company Name
+      companylogo: require("../assets/img/morganstanleylogoofficial.png"),
       imageSize: 300,
-      date: 'December 2017 - December 2018',
+      date: "December 2017 - December 2018",
     },
     {
-      role: 'Senior Research Associate',
-      companylogo: require('../assets/img/glglogo.png'),
+      role: "Senior Research Associate",
+      companylogo: require("../assets/img/glglogo.png"),
       imageSize: 200,
-      date: 'July 2016 - November 2017',
+      date: "July 2016 - November 2017",
     },
-  ]
-}
+  ],
+};
 
 const education = {
   show: true,
   heading: "Education",
   data: [
     {
-      role: 'Northeastern University, Master of Science in Computer Science',
-      companylogo: require('../assets/img/neulogoofficial.png'),
+      role: "Northeastern University, Master of Science in Computer Science",
+      companylogo: require("../assets/img/neulogoofficial.png"),
       imageSize: 300,
-      date: '2019 – 2022',
+      date: "2019 – 2022",
     },
     {
-      role: 'The University of Texas At Austin, Bachelor of Arts in Economics, Minor in Mathematics, w/ Honors',// Here Add Company Name
-      companylogo: require('../assets/img/utaustinlogoofficial.png'),
+      role: "The University of Texas At Austin, Bachelor of Arts in Economics, Minor in Mathematics, w/ Honors", // Here Add Company Name
+      companylogo: require("../assets/img/utaustinlogoofficial.png"),
       imageSize: 300,
-      date: '2012 – 2016',
+      date: "2012 – 2016",
     },
-  ]
-}
+  ],
+};
 
 // Blog SECTION
 // const blog = {
 //   show: false,
 // };
 
-export { navBar, mainBody, about, repos, skills, leadership, getInTouch, experience, education };
+export {
+  navBar,
+  mainBody,
+  about,
+  repos,
+  skills,
+  leadership,
+  getInTouch,
+  experience,
+  education,
+};
