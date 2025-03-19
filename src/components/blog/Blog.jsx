@@ -1,26 +1,84 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BlogBuilder } from "./BlogBuilder";
 import bloglist from "../../editable-stuff/blog";
 import { Link } from "react-router-dom";
-const Blog = (props) => {
+
+const Blog = ({ visible = false, onNavigate }) => {
+  // If visible prop is not provided, manage visibility internally
+  const [internalVisible, setInternalVisible] = useState(false);
+  const [contentOpacity, setContentOpacity] = useState(0);
+
+  useEffect(() => {
+    // If visible prop is not provided, set visibility internally
+    if (visible === undefined) {
+      setInternalVisible(true);
+    }
+
+    // Control content opacity based on visible state
+    // This creates a smoother text fade
+    let opacityTimer;
+    if (visible || internalVisible) {
+      opacityTimer = setTimeout(() => {
+        setContentOpacity(1);
+      }, 100);
+    } else {
+      setContentOpacity(0);
+    }
+
+    // Clean-up function
+    return () => {
+      clearTimeout(opacityTimer);
+      if (visible === undefined) {
+        setInternalVisible(false);
+      }
+    };
+  }, [visible, internalVisible]);
+
+  // Use either the prop or internal state
+  const isVisible = visible !== undefined ? visible : internalVisible;
+
+  // Custom link handler for internal blog navigation
+  const handleBlogLinkClick = (index, e) => {
+    if (onNavigate) {
+      e.preventDefault();
+      onNavigate(`/blog/${index}`);
+    }
+  };
+
+  // CSS for content transition
+  const contentStyle = {
+    opacity: contentOpacity,
+    transition: "opacity 0.4s ease-in-out",
+  };
+
   return (
-    <div className="container-lg mt-5 bg-blue">
-      <h1 className="text-center">Blogs</h1>
-      {bloglist.map((value, index) => {
-        return (
-          <BlogCard
-            key={index}
-            title={value.title}
-            description={value.description}
-            index={index}
-          />
-        );
-      })}
+    <div
+      className={`container-lg mt-5 pt-5 bg-blue ${
+        isVisible ? "blog-fade-in" : "blog-fade-out"
+      }`}
+      style={{ paddingTop: "2rem" }}
+    >
+      <div style={contentStyle}>
+        <h1 className="text-center">Blogs</h1>
+        {bloglist.map((value, index) => {
+          return (
+            <BlogCard
+              key={index}
+              title={value.title}
+              description={value.description}
+              index={index}
+              onNavigate={
+                onNavigate ? (e) => handleBlogLinkClick(index, e) : null
+              }
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
 
-const BlogCard = ({ index, title, image, description }) => {
+const BlogCard = ({ index, title, image, description, onNavigate }) => {
   return (
     <div className="m-5">
       <div className="">
@@ -32,9 +90,13 @@ const BlogCard = ({ index, title, image, description }) => {
             <div className="">
               <h1 className="">{title}</h1>
               <p className="lead">{description}</p>
-              <Link to={`${process.env.PUBLIC_URL}blog/${index}`}>
-                Read more...{" "}
-              </Link>
+              {onNavigate ? (
+                <a href={`/blog/${index}`} onClick={onNavigate}>
+                  Read more...{" "}
+                </a>
+              ) : (
+                <Link to={`/blog/${index}`}>Read more... </Link>
+              )}
             </div>
           </div>
         </div>

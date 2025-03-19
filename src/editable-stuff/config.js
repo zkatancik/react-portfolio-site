@@ -169,9 +169,9 @@ const education = {
 };
 
 // Blog SECTION
-// const blog = {
-//   show: false,
-// };
+const blog = {
+  show: true,
+};
 
 export {
   navBar,
@@ -183,4 +183,5 @@ export {
   getInTouch,
   experience,
   education,
+  blog,
 };
