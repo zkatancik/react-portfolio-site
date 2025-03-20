@@ -18,6 +18,7 @@ const Navigation = React.forwardRef((props, ref) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeItem, setActiveItem] = useState("");
   const navbarMenuRef = React.useRef();
+  const navbarTogglerRef = React.useRef();
   const navbarDimensions = useResizeObserver(navbarMenuRef);
   const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
   const location = useLocation();
@@ -76,6 +77,12 @@ const Navigation = React.forwardRef((props, ref) => {
     e.preventDefault();
     handleNavClick("");
 
+    // Collapse navbar if expanded on mobile
+    const navbarCollapse = document.getElementById("basic-navbar-nav");
+    if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+      navbarTogglerRef.current.click();
+    }
+
     // Only apply fade if we're not already on the home page
     if (location.pathname !== "/") {
       // Apply fade-out to entire body before navigation
@@ -108,7 +115,11 @@ const Navigation = React.forwardRef((props, ref) => {
       >
         {`zack katancik`}
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
+      <Navbar.Toggle
+        aria-controls="basic-navbar-nav"
+        className="toggler"
+        ref={navbarTogglerRef}
+      />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="navbar-nav mr-auto">
           {blog.show && (

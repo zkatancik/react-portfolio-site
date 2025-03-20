@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import bloglist from "../../editable-stuff/blog";
+import { formatDate } from "./Blog";
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -69,7 +70,10 @@ const BlogPost = () => {
             &larr; Back to Blogs
           </button>
           <h1 className="display-2 text-center">{post.title}</h1>
-          <img className="img-fluid mb-2" src={post.image} alt={post.title} />
+          <p className="text-muted text-center mb-4">
+            <small>Posted on {formatDate(post.date)}</small>
+          </p>
+          <img className="img-fluid mb-4" src={post.image} alt={post.title} />
           {post.getBlog()}
         </div>
       )}

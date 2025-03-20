@@ -3,10 +3,11 @@ import React, { Fragment } from "react";
 class BlogBuilder {
   list = [];
 
-  constructor({ title, image, description }) {
+  constructor({ title, image, description, date }) {
     this.title = title;
     this.image = image;
     this.description = description;
+    this.date = date || new Date().toISOString(); // Default to current date if not provided
   }
 
   addParagraph = (props) => {

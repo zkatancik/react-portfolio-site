@@ -65,7 +65,9 @@ const Blog = ({ visible = false, onNavigate }) => {
             <BlogCard
               key={index}
               title={value.title}
+              image={value.image}
               description={value.description}
+              date={value.date}
               index={index}
               onNavigate={
                 onNavigate ? (e) => handleBlogLinkClick(index, e) : null
@@ -78,17 +80,39 @@ const Blog = ({ visible = false, onNavigate }) => {
   );
 };
 
-const BlogCard = ({ index, title, image, description, onNavigate }) => {
+const formatDate = (dateString) => {
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  };
+  return new Date(dateString).toLocaleDateString(undefined, options);
+};
+
+const BlogCard = ({ index, title, image, description, date, onNavigate }) => {
   return (
     <div className="m-5">
       <div className="">
         <div className="row">
-          <div className="col-4 col-lg-12">
-            {/* <img src={image} className="card-img" alt="..." /> */}
+          <div className="col-4 col-lg-12" style={{ overflow: "hidden" }}>
+            <img
+              src={image}
+              className="img-fluid w-100 h-100 object-fit-cover"
+              alt={title}
+              style={{
+                aspectRatio: "16/9",
+                objectPosition: "center",
+              }}
+            />
           </div>
           <div className="col-8 col-lg-12">
             <div className="">
               <h1 className="">{title}</h1>
+              <p className="text-muted mb-2">
+                <small>Posted on {formatDate(date)}</small>
+              </p>
               <p className="lead">{description}</p>
               {onNavigate ? (
                 <a href={`/blog/${index}`} onClick={onNavigate}>
@@ -106,4 +130,4 @@ const BlogCard = ({ index, title, image, description, onNavigate }) => {
   );
 };
 
-export { Blog, BlogBuilder };
+export { Blog, BlogBuilder, formatDate };
