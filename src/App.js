@@ -36,22 +36,25 @@ const BlogWithTransition = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // First clear any previous fade classes
+    document.body.classList.remove("fade-out-transition");
+
     // Apply a small delay before showing content to prevent "blink"
     const contentTimer = setTimeout(() => {
       setContentReady(true);
       // Only start fade-in after content is ready
       setTimeout(() => {
         setIsVisible(true);
+        // Ensure fade-in class is applied after contentReady is set
+        document.body.classList.add("fade-in-transition");
       }, 50);
     }, 100);
-
-    // Add transition class to body when component mounts
-    document.body.classList.add("fade-in-transition");
-    document.body.classList.remove("fade-out-transition");
 
     // Clean up timers and classes when unmounting
     return () => {
       clearTimeout(contentTimer);
+      setIsVisible(false);
+      setContentReady(false);
     };
   }, []);
 
@@ -171,21 +174,31 @@ const App = () => {
 
   return (
     <BrowserRouter basename={"/"}>
-      {navBar.show && <Navbar ref={titleRef} />}
-      <Routes>
-        <Route path="/" exact element={<Home ref={titleRef} />} />
-        <Route path="/blog" exact element={<BlogWithTransition />} />
-        <Route path="/blog/:id" element={<BlogPost />} />
-      </Routes>
-      <Footer>
-        {getInTouch.show && (
-          <GetInTouch
-            heading={getInTouch.heading}
-            message={getInTouch.message}
-            email={getInTouch.email}
-          />
-        )}
-      </Footer>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+        }}
+      >
+        {navBar.show && <Navbar ref={titleRef} />}
+        <div style={{ flex: "1 0 auto" }}>
+          <Routes>
+            <Route path="/" exact element={<Home ref={titleRef} />} />
+            <Route path="/blog" exact element={<BlogWithTransition />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
+          </Routes>
+        </div>
+        <Footer>
+          {getInTouch.show && (
+            <GetInTouch
+              heading={getInTouch.heading}
+              message={getInTouch.message}
+              email={getInTouch.email}
+            />
+          )}
+        </Footer>
+      </div>
     </BrowserRouter>
   );
 };

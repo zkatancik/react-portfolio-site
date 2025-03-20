@@ -64,7 +64,7 @@ const BlogPost = () => {
         <div style={contentStyle}>
           <button
             onClick={handleNavigateBack}
-            className="btn btn-outline-light mb-4"
+            className="btn btn-outline-dark mb-4 mt-4"
             style={{ transition: "opacity 0.3s ease" }}
           >
             &larr; Back to Blogs
@@ -81,7 +81,7 @@ const BlogPost = () => {
         <div style={contentStyle}>
           <button
             onClick={handleNavigateBack}
-            className="btn btn-outline-light mb-4"
+            className="btn btn-outline-dark mb-4 mt-4"
             style={{ transition: "opacity 0.3s ease" }}
           >
             &larr; Back to Blogs

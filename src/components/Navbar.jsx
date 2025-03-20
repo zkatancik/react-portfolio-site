@@ -24,6 +24,9 @@ const Navigation = React.forwardRef((props, ref) => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Determine if we're on the home page
+  const isHomePage = location.pathname === "/";
+
   // Reset active item when navigating to blog
   useEffect(() => {
     if (location.pathname === "/blog") {
@@ -31,27 +34,49 @@ const Navigation = React.forwardRef((props, ref) => {
     } else if (location.pathname === "/") {
       // Handle home page - can set to default nav item if needed
     }
+
+    // Reset isTop state when navigating back to home page
+    if (location.pathname === "/") {
+      // When returning to home, check scroll position to determine opacity
+      if (window.scrollY <= 55) {
+        setIsTop(true);
+      }
+    } else {
+      // On any non-home page (like blog), force navbar to be opaque
+      setIsTop(false);
+    }
+
+    // Scroll to top on any navigation change
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
       if (!navbarDimensions) return;
       if (!ref.current) return;
-      currPos.y + ref.current.offsetTop - navbarDimensions.bottom > 5
-        ? setIsTop(true)
-        : setIsTop(false);
+
+      // Only update isTop based on scroll if we're on the home page
+      if (isHomePage) {
+        currPos.y + ref.current.offsetTop - navbarDimensions.bottom > 5
+          ? setIsTop(true)
+          : setIsTop(false);
+      }
       setScrollPosition(currPos.y);
     },
-    [navBottom]
+    [navBottom, isHomePage]
   );
 
   React.useEffect(() => {
     if (!navbarDimensions) return;
     if (!ref.current) return;
-    navBottom - scrollPosition >= ref.current.offsetTop
-      ? setIsTop(false)
-      : setIsTop(true);
-  }, [navBottom, navbarDimensions, ref, scrollPosition]);
+
+    // Only update isTop based on navBottom if we're on the home page
+    if (isHomePage) {
+      navBottom - scrollPosition >= ref.current.offsetTop
+        ? setIsTop(false)
+        : setIsTop(true);
+    }
+  }, [navBottom, navbarDimensions, ref, scrollPosition, isHomePage]);
 
   const handleNavClick = (item) => {
     setActiveItem(item);
@@ -62,14 +87,28 @@ const Navigation = React.forwardRef((props, ref) => {
     e.preventDefault();
     handleNavClick("blog");
 
-    // Apply fade-out to entire body before navigation
-    document.body.classList.remove("fade-in-transition");
-    document.body.classList.add("fade-out-transition");
+    // Collapse navbar if expanded on mobile
+    const navbarCollapse = document.getElementById("basic-navbar-nav");
+    if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+      navbarTogglerRef.current.click();
+    }
 
-    // Delay navigation to allow for fade effect
-    setTimeout(() => {
-      navigate("/blog");
-    }, 300);
+    // Only apply fade if we're not already on the blog page
+    if (location.pathname !== "/blog") {
+      // Apply fade-out to entire body before navigation
+      document.body.classList.remove("fade-in-transition");
+      document.body.classList.add("fade-out-transition");
+
+      // Delay navigation to allow for fade effect
+      setTimeout(() => {
+        navigate("/blog");
+        // Scroll to top after navigation
+        window.scrollTo(0, 0);
+      }, 300);
+    } else {
+      // If already on blog page, just scroll to top
+      window.scrollTo(0, 0);
+    }
   };
 
   // Function to handle home navigation with fade
@@ -91,11 +130,21 @@ const Navigation = React.forwardRef((props, ref) => {
 
       // Delay navigation to allow for fade effect
       setTimeout(() => {
+        // Explicitly set navbar to transparent when navigating to home
+        setIsTop(true);
+
         navigate("/");
+        // Scroll to top after navigation
+        window.scrollTo(0, 0);
+        // After a slight delay, go to the home anchor
+        setTimeout(() => {
+          window.location.hash = "home";
+        }, 100);
       }, 300);
     } else {
-      // If already on home page, just navigate to the anchor
-      window.location.href = process.env.PUBLIC_URL + "/#home";
+      // If already on home page, scroll to top first, then navigate to the anchor
+      window.scrollTo(0, 0);
+      window.location.hash = "home";
     }
   };
 

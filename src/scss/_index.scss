@@ -13,7 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
 }
 
 code {
@@ -141,14 +141,16 @@ code {
 .blog-fade-out {
   will-change: opacity;
   min-height: 50vh; /* Ensure consistent height during fade */
+  opacity: 1; /* Ensure initial opacity is set */
 }
 
 /* Smooth container transitions */
 .container-lg {
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 
 /* Force a specific height on blog containers to prevent layout shifts */
 .container-lg.mt-5.bg-blue {
   min-height: 70vh;
+  will-change: opacity;
 }

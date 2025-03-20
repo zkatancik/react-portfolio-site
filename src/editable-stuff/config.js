@@ -115,7 +115,7 @@ const getInTouch = {
   heading: "Say Hello!",
   message:
     "Career-changer from financial research to software engineering, but still a hobbyist in trading and finance. Feel free to reach out with fun projects to",
-  email: "zkatancik@gmail.com",
+  email: "zack@katancik.com",
 };
 
 const experience = {

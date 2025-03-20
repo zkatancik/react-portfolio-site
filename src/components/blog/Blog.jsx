@@ -30,6 +30,7 @@ const Blog = ({ visible = false, onNavigate }) => {
       clearTimeout(opacityTimer);
       if (visible === undefined) {
         setInternalVisible(false);
+        setContentOpacity(0);
       }
     };
   }, [visible, internalVisible]);
@@ -49,6 +50,7 @@ const Blog = ({ visible = false, onNavigate }) => {
   const contentStyle = {
     opacity: contentOpacity,
     transition: "opacity 0.4s ease-in-out",
+    display: "block",
   };
 
   return (
@@ -56,10 +58,13 @@ const Blog = ({ visible = false, onNavigate }) => {
       className={`container-lg mt-5 pt-5 bg-blue ${
         isVisible ? "blog-fade-in" : "blog-fade-out"
       }`}
-      style={{ paddingTop: "2rem" }}
+      style={{
+        paddingTop: "2rem",
+        minHeight: bloglist.length <= 1 ? "calc(100vh - 300px)" : "auto", // Add minimum height when few posts
+      }}
     >
       <div style={contentStyle}>
-        <h1 className="text-center">Blogs</h1>
+        <h1 className="text-center">Zack's Tech Ramblings</h1>
         {bloglist.map((value, index) => {
           return (
             <BlogCard
