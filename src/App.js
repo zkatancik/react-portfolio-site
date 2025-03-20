@@ -143,8 +143,31 @@ const Home = React.forwardRef((props, ref) => {
   );
 });
 
+// Effect to add base tag for production builds
+const useBaseTagEffect = () => {
+  useEffect(() => {
+    // Only add base tag in production to help with client-side routing
+    if (process.env.NODE_ENV === "production") {
+      const baseTag = document.createElement("base");
+      baseTag.href =
+        window.location.pathname.split("/").slice(0, -1).join("/") || "/";
+      document.head.prepend(baseTag);
+
+      return () => {
+        const baseElement = document.querySelector("base");
+        if (baseElement) {
+          baseElement.remove();
+        }
+      };
+    }
+  }, []);
+};
+
 const App = () => {
   const titleRef = React.useRef();
+
+  // Add base tag for production builds
+  useBaseTagEffect();
 
   return (
     <BrowserRouter basename={"/"}>
