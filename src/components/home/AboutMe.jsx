@@ -7,7 +7,16 @@ const pictureLinkRegex = new RegExp(
   /[(http(s)?):(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/
 );
 
-const AboutMe = ({ heading, message1, message2, message3, link, imgSize, resume }) => {
+const AboutMe = ({
+  heading,
+  message1,
+  message2,
+  message3,
+  message4,
+  link,
+  imgSize,
+  resume,
+}) => {
   const [profilePicUrl, setProfilePicUrl] = React.useState("");
   const [showPic, setShowPic] = React.useState(Boolean(link));
   // https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook
@@ -31,8 +40,6 @@ const AboutMe = ({ heading, message1, message2, message3, link, imgSize, resume 
     }
   }, [link]);
 
-
-
   return (
     <Jumbotron id="aboutme" className="m-0">
       <div className="container row">
@@ -52,6 +59,7 @@ const AboutMe = ({ heading, message1, message2, message3, link, imgSize, resume 
           <p className="lead text-center">{message1}</p>
           <p className="lead text-center">{message2}</p>
           <p className="lead text-center">{message3}</p>
+          <p className="lead text-center">{message4}</p>
           {resume && (
             <p className="lead text-center">
               <a
