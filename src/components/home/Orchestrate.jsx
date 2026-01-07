@@ -7,42 +7,42 @@ const Orchestrate = ({ orchestrate }) => {
     {
       title: "Opening Splash and Sign In",
       description: "The opening splash is the front door to the experience. You choose whether to sign in with Spotify or Apple Music, and the app uses that connection for personalization, artist images, genres, and music playback throughout the rest of the flow.",
-      gif: require("../../assets/img/orchestrate/OpeningSplash.gif"),
+      video: require("../../assets/img/orchestrate/openingSplash.webm"),
     },
     {
       title: "How It Works",
       description: "A quick tour of the full journey: Connect your Spotify or Apple Music account, choose a location and date range to search for shows, then select your favorites, grab tickets, and share your lineup.",
-      gif: require("../../assets/img/orchestrate/HowItWorks.gif"),
+      video: require("../../assets/img/orchestrate/howItWorks.webm"),
     },
     {
       title: "Scheduling Flow: Quick Find or Custom Schedule",
       description: "The scheduling flow handles two different ways of planning: a fast \"what is happening now\" browse, or a deeper multi-stop schedule that matches your listening profile. Pick Quick Find for \"This Week\" or \"This Weekend\", or build a custom schedule with multiple travel stops.",
-      gif: require("../../assets/img/orchestrate/SchedulingFlow.gif"),
+      video: require("../../assets/img/orchestrate/schedulingFlow.webm"),
     },
     {
       title: "Loading Screen: Personalization in Progress",
       description: "After you kick off a search, the app shows a playful loading screen while it builds the personalized results. The messaging changes based on what the app is doing—aggregating favorite artists, expanding your taste profile, and searching multiple ticketing sources.",
-      gif: require("../../assets/img/orchestrate/LoadingScreen.gif"),
+      video: require("../../assets/img/orchestrate/loadingScreen.webm"),
     },
     {
       title: "Schedule Timeline and Card Interactions",
       description: "The schedule timeline groups shows by day and treats each day as a stack of cards. Tap a stack to expand it into a horizontal coverflow, then swipe through shows. Each card reveals venue details, show metadata, artist bios, recent setlists, and in-app music playback.",
-      gif: require("../../assets/img/orchestrate/CardInteractions.gif"),
+      video: require("../../assets/img/orchestrate/cardInteractions.webm"),
     },
     {
       title: "Buy Tickets and Save to My Shows",
       description: "Your chosen shows are grouped by date and presented as animated cards, with immediate actions for tickets and saving. Buy Tickets opens the best available ticket URL, and you can save events to your personal library for easy revisiting.",
-      gif: require("../../assets/img/orchestrate/BuyTickets.gif"),
+      video: require("../../assets/img/orchestrate/buyTickets.webm"),
     },
     {
       title: "Spotlight Menu and My Shows Library",
       description: "A persistent header keeps navigation within reach. The My Shows page is your personal archive of saved concerts, built for long-term use. Saved shows are grouped by date with clear headers, and upcoming events keep the Buy Tickets action available.",
-      gif: require("../../assets/img/orchestrate/SpotlightAndMyShows.gif"),
+      video: require("../../assets/img/orchestrate/spotlightMyShows.webm"),
     },
     {
       title: "Poster Designer: Build and Share Your Lineup",
       description: "Poster Designer turns your selected shows into a festival-style lineup poster. It's a hands-on, mobile-friendly canvas with visual coaching. Scroll to cycle through backgrounds, swipe to change fonts, and customize every detail before sharing directly to Instagram or X, or downloading a high-quality image.",
-      gif: require("../../assets/img/orchestrate/PosterUi.gif"),
+      video: require("../../assets/img/orchestrate/posterUi.webm"),
     },
   ];
 
@@ -131,15 +131,19 @@ const Orchestrate = ({ orchestrate }) => {
                     e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
                   }}
                 >
-                  <img 
-                    src={feature.gif} 
-                    alt={feature.title}
+                  <video 
+                    src={feature.video}
                     className="img-fluid"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     style={{ 
                       width: '100%', 
                       height: 'auto',
                       display: 'block'
-                    }} 
+                    }}
+                    aria-label={feature.title}
                   />
                 </div>
               </Col>
