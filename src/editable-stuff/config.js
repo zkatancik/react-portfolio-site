@@ -182,6 +182,13 @@ const blog = {
   show: true,
 };
 
+// Orchestrate SECTION
+const orchestrate = {
+  show: true,
+  heading: "Orchestrate Concert Planner",
+  description: "Orchestrate Concert Planner is a personalized concert discovery and planning app. Connect your Spotify or Apple Music account, find shows that match your taste, build a custom schedule, and turn your picks into a sharable lineup poster.",
+};
+
 export {
   navBar,
   mainBody,
@@ -193,4 +200,5 @@ export {
   experience,
   education,
   blog,
+  orchestrate,
 };

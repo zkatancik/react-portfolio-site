@@ -15,6 +15,7 @@ import {
   getInTouch,
   experience,
   education,
+  orchestrate,
 } from "./editable-stuff/config.js";
 import MainBody from "./components/home/MainBody";
 import AboutMe from "./components/home/AboutMe";
@@ -28,6 +29,7 @@ import Leadership from "./components/home/Leadership.jsx";
 
 import Experience from "./components/home/Experience";
 import Education from "./components/home/Education";
+import Orchestrate from "./components/home/Orchestrate";
 
 // Wrap Blog component with transition handling
 const BlogWithTransition = () => {
@@ -127,6 +129,7 @@ const Home = React.forwardRef((props, ref) => {
       )}
       {education.show && <Education education={education} />}
       {experience.show && <Experience experience={experience} />}
+      {orchestrate.show && <Orchestrate orchestrate={orchestrate} />}
       {repos.show && (
         <Project
           heading={repos.heading}

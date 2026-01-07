@@ -10,6 +10,7 @@ import {
   experience,
   education,
   blog,
+  orchestrate,
 } from "../editable-stuff/config.js";
 import { NavLink, RouterNavLink } from "./home/migration";
 
@@ -218,6 +219,18 @@ const Navigation = React.forwardRef((props, ref) => {
               onClick={() => handleNavClick("experience")}
             >
               Experience
+            </NavLink>
+          )}
+          {orchestrate.show && (
+            <NavLink
+              className={`nav-item lead ${
+                activeItem === "orchestrate" ? "active" : ""
+              }`}
+              href={process.env.PUBLIC_URL + "/#orchestrate"}
+              eventKey="3a"
+              onClick={() => handleNavClick("orchestrate")}
+            >
+              Orchestrate
             </NavLink>
           )}
           {repos.show && (
