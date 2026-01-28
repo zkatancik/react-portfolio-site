@@ -73,7 +73,7 @@ const Orchestrate = ({ orchestrate }) => {
           }
         });
       },
-      { threshold: 0.01, rootMargin: "50px" }
+      { threshold: 0.01, rootMargin: "50px" },
     );
 
     videos.forEach((video) => {
@@ -100,7 +100,7 @@ const Orchestrate = ({ orchestrate }) => {
           videos.forEach(ensurePlaying);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     if (section) sectionObserver.observe(section);
 
