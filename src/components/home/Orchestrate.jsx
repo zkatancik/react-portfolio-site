@@ -6,48 +6,63 @@ const Orchestrate = ({ orchestrate }) => {
   const videoRefs = useRef([]);
   const features = [
     {
+      reverse: false,
       title: "Opening Splash and Sign In",
       description:
         "The opening splash is the front door to the experience. You choose whether to sign in with Spotify or Apple Music, and the app uses that connection for personalization, artist images, genres, and music playback throughout the rest of the flow.",
       video: require("../../assets/img/orchestrate/openingSplash.webm"),
     },
     {
+      reverse: true,
       title: "How It Works",
       description:
         "A quick tour of the full journey: Connect your Spotify or Apple Music account, choose a location and date range to search for shows, then select your favorites, grab tickets, and share your lineup.",
       video: require("../../assets/img/orchestrate/howItWorks.webm"),
     },
     {
+      reverse: false,
       title: "Scheduling Flow: Quick Find or Custom Schedule",
       description:
         'The scheduling flow handles two different ways of planning: a fast "what is happening now" browse, or a deeper multi-stop schedule that matches your listening profile. Pick Quick Find for "This Week" or "This Weekend", or build a custom schedule with multiple travel stops.',
       video: require("../../assets/img/orchestrate/schedulingFlow.webm"),
     },
     {
+      reverse: true,
       title: "Loading Screen: Personalization in Progress",
       description:
         "After you kick off a search, the app shows a playful loading screen while it builds the personalized results. The messaging changes based on what the app is doing—aggregating favorite artists, expanding your taste profile, and searching multiple ticketing sources.",
       video: require("../../assets/img/orchestrate/loadingScreen.webm"),
     },
     {
+      reverse: false,
       title: "Schedule Timeline and Card Interactions",
       description:
         "The schedule timeline groups shows by day and treats each day as a stack of cards. Tap a stack to expand it into a horizontal coverflow, then swipe through shows. Each card reveals venue details, show metadata, artist bios, recent setlists, and in-app music playback.",
       video: require("../../assets/img/orchestrate/cardInteractions.webm"),
     },
     {
+      reverse: true,
+      title: "Map View: Browse Shows by Venue",
+      description:
+        "The map view turns discovery into a spatial browse. Scroll through the map to move between venues and available shows, tap into a location to focus the results around it, and jump directly into the event details from the map when a stop looks worth adding.",
+      video: require("../../assets/img/orchestrate/mapView.webm"),
+    },
+    {
+      reverse: false,
       title: "Buy Tickets and Save to My Shows",
       description:
         "Your chosen shows are grouped by date and presented as animated cards, with immediate actions for tickets and saving. Buy Tickets opens the best available ticket URL, and you can save events to your personal library for easy revisiting.",
       video: require("../../assets/img/orchestrate/buyTickets.webm"),
     },
     {
+      reverse: true,
       title: "Spotlight Menu and My Shows Library",
       description:
         "A persistent header keeps navigation within reach. The My Shows page is your personal archive of saved concerts, built for long-term use. Saved shows are grouped by date with clear headers, and upcoming events keep the Buy Tickets action available.",
       video: require("../../assets/img/orchestrate/spotlightMyShows.webm"),
     },
     {
+      reverse: false,
       title: "Poster Designer: Build and Share Your Lineup",
       description:
         "Poster Designer turns your selected shows into a festival-style lineup poster. It's a hands-on, mobile-friendly canvas with visual coaching. Scroll to cycle through backgrounds, swipe to change fonts, and customize every detail before sharing directly to Instagram or X, or downloading a high-quality image.",
@@ -181,7 +196,7 @@ const Orchestrate = ({ orchestrate }) => {
           {features.map((feature, index) => (
             <Row
               key={index}
-              className={`mb-5 ${index % 2 === 1 ? "flex-row-reverse" : ""}`}
+              className={`mb-5 ${feature.reverse ? "flex-row-reverse" : ""}`}
             >
               <Col lg={6} className="d-flex align-items-center mb-4 mb-lg-0">
                 <div>
